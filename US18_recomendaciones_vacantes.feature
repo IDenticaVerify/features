@@ -6,9 +6,16 @@ Feature: Recomendación de vacantes al postulante
     Given que el postulante está autenticado
     And tiene un perfil validado
 
-  Scenario: Mostrar vacantes recomendadas
-    When el postulante accede a "Vacantes recomendadas"
-    Then el sistema debe mostrar vacantes alineadas a sus skills y experiencia
+  Scenario: Recomendación de múltiples vacantes
+    Given que el postulante tiene el siguiente perfil:
+      | skill     | nivel |
+      | Python    | Alto  |
+      | UI Design | Medio |
+    When se generan recomendaciones
+    Then se deben mostrar las siguientes vacantes:
+      | vacante               | coincidencia |
+      | Backend Junior Python | Alta         |
+      | Diseñador UI Junior   | Media        |
 
   Scenario: Sin vacantes recomendadas
     Given que no existen vacantes compatibles

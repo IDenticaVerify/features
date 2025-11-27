@@ -5,9 +5,13 @@ Feature: Recomendación de candidatos al reclutador
   Background:
     Given que el reclutador está autenticado
 
-  Scenario: Mostrar candidatos recomendados
-    When el reclutador accede a la sección "Candidatos recomendados"
-    Then el sistema debe mostrar postulantes con alto nivel de coincidencia
+  Scenario: Recomendaciones de candidatos según IA
+    When el reclutador revisa candidatos recomendados:
+      | nombre       | match |
+      | Diego Cervantes    | Alto  |
+      | Derek Ruiz  | Medio |
+      | Sergio Villa | Bajo  |
+    Then el sistema debe mostrar la lista ordenada por nivel de coincidencia
 
   Scenario: Ajuste según filtros del reclutador
     When el reclutador filtra por "Senior" y "Diseño UX"

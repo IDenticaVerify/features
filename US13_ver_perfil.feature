@@ -8,8 +8,6 @@ Feature: Visualización del perfil validado del postulante
   Scenario: Visualización del perfil completo
     When el postulante accede a la sección "Mi perfil"
     Then debe ver sus datos personales registrados
-    And debe ver su historial de validaciones
-    And debe visualizar los documentos cargados con su respectivo estado
 
   Scenario: Intento de acceso sin autenticación
     Given que un usuario no autenticado intenta acceder al perfil

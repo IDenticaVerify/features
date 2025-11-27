@@ -5,10 +5,15 @@ Feature: Consulta del historial de certificados emitidos
   Background:
     Given que la institución está autenticada
 
-  Scenario: Visualización del historial
-    When la institución accede a la sección "Historial de certificados"
-    Then debe visualizar una lista de certificados emitidos
-    And cada registro debe incluir fecha, egresado y estado en blockchain
+  Scenario: Visualización del historial con múltiples registros
+    Given que el sistema tiene los siguientes certificados emitidos:
+      | egresado      | fecha      | estado blockchain |
+      | Diego Huaman    | 2025-01-10 | Registrado        |
+      | Ruth Porras   | 2024-02-12 | En verificación   |
+      | Frank Flores | 2023-03-01 | Registrado        |
+    When la institución accede al historial
+    Then debe visualizar todos los registros correctamente
+
 
   Scenario: Búsqueda por nombre o fecha
     When la institución busca un certificado por nombre o rango de fechas

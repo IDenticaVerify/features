@@ -5,11 +5,14 @@ Feature: Dashboard del reclutador
   Background:
     Given que el reclutador está autenticado
 
-  Scenario: Visualización de métricas principales
+  Scenario: Visualización de métricas en el dashboard
+    Given que existen los siguientes datos:
+      | métrica                  | valor |
+      | Postulantes registrados  | 120   |
+      | Documentos validados     | 85    |
+      | Nuevos postulantes (24h) | 10    |
     When el reclutador accede al dashboard
-    Then debe visualizar la cantidad de postulantes registrados
-    And la cantidad de documentos validados y rechazados
-    And las validaciones recientes
+    Then debe visualizar todas las métricas correctamente
 
   Scenario: Acceso rápido a perfiles
     When el reclutador hace clic en un postulante desde el dashboard

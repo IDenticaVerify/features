@@ -5,9 +5,12 @@ Feature: Consulta de perfiles de egresados validados
   Background:
     Given que la institución está autenticada
 
-  Scenario: Búsqueda por nombre o carrera
-    When la institución busca un egresado por nombre o carrera
-    Then el sistema debe mostrar los egresados coincidentes
+  Scenario: Resultados de búsqueda de egresados
+    When la institución busca egresados y obtiene:
+      | nombre      | carrera                | estado   |
+      | Diego Huaman  | Ingeniería de Sistemas | Validado |
+      | Ruth Porras | Administración         | Validado |
+    Then el sistema debe mostrar solo estos egresados en los resultados
     And solo deben aparecer egresados con documentos validados
 
   Scenario: Visualización del estado de certificación
