@@ -7,10 +7,10 @@ Feature: Recomendación de candidatos al reclutador
 
   Scenario: Recomendaciones de candidatos según IA
     When el reclutador revisa candidatos recomendados:
-      | nombre       | match |
-      | Diego Cervantes    | Alto  |
-      | Derek Ruiz  | Medio |
-      | Sergio Villa | Bajo  |
+      | nombre          | match |
+      | Diego Cervantes | Alto  |
+      | Derek Ruiz      | Medio |
+      | Sergio Villa    | Bajo  |
     Then el sistema debe mostrar la lista ordenada por nivel de coincidencia
 
   Scenario: Ajuste según filtros del reclutador

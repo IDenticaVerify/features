@@ -2,8 +2,6 @@ Feature: Seguridad de la información
   Como usuario quiero que la plataforma proteja mis datos
   para garantizar confidencialidad y seguridad.
 
-
-
   Scenario: Cifrado de datos sensibles
     Given que el usuario registra información personal
     Then el sistema debe almacenarla cifrada
@@ -17,3 +15,4 @@ Feature: Seguridad de la información
       | Administrador | Permitido     | Permitido    |
     When el usuario intenta acceder a las secciones correspondientes
     Then el sistema debe aplicar los permisos correctamente
+    

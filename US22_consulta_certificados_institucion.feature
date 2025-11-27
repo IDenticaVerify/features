@@ -7,9 +7,9 @@ Feature: Consulta del historial de certificados emitidos
 
   Scenario: Visualización del historial con múltiples registros
     Given que el sistema tiene los siguientes certificados emitidos:
-      | egresado      | fecha      | estado blockchain |
-      | Diego Huaman    | 2025-01-10 | Registrado        |
-      | Ruth Porras   | 2024-02-12 | En verificación   |
+      | egresado     | fecha      | estado blockchain |
+      | Diego Huaman | 2025-01-10 | Registrado        |
+      | Ruth Porras  | 2024-02-12 | En verificación   |
       | Frank Flores | 2023-03-01 | Registrado        |
     When la institución accede al historial
     Then debe visualizar todos los registros correctamente

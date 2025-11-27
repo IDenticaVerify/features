@@ -7,9 +7,9 @@ Feature: Consulta de perfiles de egresados validados
 
   Scenario: Resultados de búsqueda de egresados
     When la institución busca egresados y obtiene:
-      | nombre      | carrera                | estado   |
-      | Diego Huaman  | Ingeniería de Sistemas | Validado |
-      | Ruth Porras | Administración         | Validado |
+      | nombre       | carrera                | estado   |
+      | Diego Huaman | Ingeniería de Sistemas | Validado |
+      | Ruth Porras  | Administración         | Validado |
     Then el sistema debe mostrar solo estos egresados en los resultados
     And solo deben aparecer egresados con documentos validados
 
